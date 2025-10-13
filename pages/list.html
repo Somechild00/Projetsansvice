@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ma liste – Projetsansvice</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="container">
+      <nav>
+        <a class="logo" href="../index.html">Grocerly</a>
+        <ul>
+          <li><a href="./list.html" aria-current="page">Ma liste</a></li>
+          <li><a href="./login.html">Connexion</a></li>
+          <li><a href="./profile.html">Profil</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <h1>Liste de courses</h1>
+
+      <section class="card">
+        <h2>Ajouter un article</h2>
+        <form class="grid">
+          <label
+            >Nom de l’article
+            <input
+              class="input"
+              type="text"
+              placeholder="ex : Pâtes"
+              required
+            />
+          </label>
+          <label
+            >Quantité
+            <input class="input" type="number" min="1" value="1" />
+          </label>
+          <label
+            >Rayon
+            <input class="input" type="text" placeholder="ex : Épicerie" />
+          </label>
+          <button class="btn" type="submit">Ajouter</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Vos articles</h2>
+        <ul class="list">
+          <li class="hint">Aucun article pour le moment.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="container">
+      <small>© 2025 Projetsansvice</small>
+    </footer>
+  </body>
+</html>
