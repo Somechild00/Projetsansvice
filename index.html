@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetsansvice – Page d'accueil</title>
+    <!-- Lien vers CSS -->
+    <link rel="stylesheet" href="\Users\jonat\Desktop\Projetsansvice\css/style.css">
+    <!-- Google Fonts pour Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header avec Navigation -->
+    <header class="header">
+        <div class="container">
+            <!-- Logo + Slogan -->
+            <div class="logo-section">
+                <img src="\Users\jonat\Desktop\Projetsansvice\assets/images/logo.png" alt="Logo Projetsansvice" class="logo">
+                <h1 class="slogan">Vos listes de courses intelligentes</h1>
+            </div>
+
+            <!-- Barre de recherche -->
+            <div class="search-bar">
+                <input type="search" placeholder="Recherchez des produits..." class="search-input">
+                <button type="submit" class="search-btn">Rechercher</button>
+            </div>
+
+            <!-- Menu de navigation -->
+            <nav class="nav">
+                <button class="hamburger" aria-label="Ouvrir le menu">☰</button>
+                <ul class="nav-menu">
+                    <li><a href="#accueil" class="nav-link">Accueil</a></li>
+                    <li><a href="#produits" class="nav-link">Produits</a></li>
+                    <li><a href="#promotions" class="nav-link">Promotions</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="login.html" class="nav-link">Connexion / Profil</a></li>
+                </ul>
+            </nav>
+
+            <!-- Bouton mode clair/sombre -->
+            <button id="theme-toggle" class="theme-toggle" aria-label="Basculer le mode clair/sombre">
+                🌙 <!-- Icône par défaut pour mode sombre ; JS changera en ☀️ -->
+            </button>
+        </div>
+    </header>
+
+    <!-- Bannière principale (Hero) -->
+    <section class="hero" id="accueil">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Organisez vos courses facilement, où que vous soyez</h2>
+                <p>Créez, gérez et partagez vos listes de courses en un clin d'œil avec notre app inspirée des meilleurs e-commerces.</p>
+                <a href="login.html" class="btn-primary">Commencer</a>
+            </div>
+            <div class="hero-image">
+                <img src="assets/images/hero-caddie.jpg" alt="Illustration d'un caddie avec produits" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Fonctionnalités / Avantages -->
+    <section class="features" id="produits">
+        <div class="container">
+            <h2>Nos fonctionnalités</h2>
+            <div class="features-grid">
+                <!-- Carte 1 -->
+                <div class="feature-card">
+                    <h3>Créez et gérez vos listes</h3>
+                    <p>Ajoutez, modifiez ou supprimez des produits en quelques clics. Tout est synchronisé.</p>
+                </div>
+                <!-- Carte 2 -->
+                <div class="feature-card">
+                    <h3>Recherchez et triez vos produits</h3>
+                    <p>Filtrez par catégorie, prix ou marque pour trouver ce que vous cherchez rapidement.</p>
+                </div>
+                <!-- Carte 3 -->
+                <div class="feature-card">
+                    <h3>Activez le mode clair/sombre</h3>
+                    <p>Adaptez l'interface à vos préférences avec une transition fluide et une sauvegarde automatique.</p>
+                </div>
+                <!-- Carte 4 -->
+                <div class="feature-card">
+                    <h3>Sauvegarde automatique</h3>
+                    <p>Vos listes sont stockées localement dans votre navigateur, sans effort.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section "Comment ça marche" -->
+    <section class="how-it-works" id="promotions">
+        <div class="container">
+            <h2>Comment ça marche ?</h2>
+            <div class="steps">
+                <!-- Étape 1 -->
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Créez un compte</h3>
+                    <p>Inscrivez-vous en quelques secondes pour accéder à toutes les fonctionnalités.</p>
+                </div>
+                <!-- Étape 2 -->
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Ajoutez vos produits</h3>
+                    <p>Recherchez, sélectionnez et organisez vos articles préférés dans vos listes.</p>
+                </div>
+                <!-- Étape 3 -->
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Faites vos courses facilement</h3>
+                    <p>Accédez à vos listes en magasin ou en ligne, et cochez au fur et à mesure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <p>Projetsansvice – vos courses sans tracas !</p>
+                <ul class="footer-links">
+                    <li><a href="#mentions">Mentions légales</a></li>
+                    <li><a href="#privacy">Politique de confidentialité</a></li>
+                    <li><a href="mailto:contact@projetsansvice.com">Contact</a></li>
+                </ul>
+                <div class="social-links">
+                    <a href="#twitter">Twitter</a>
+                    <a href="#facebook">Facebook</a>
+                    <a href="#instagram">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lien vers JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
