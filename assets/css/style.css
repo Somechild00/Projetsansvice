@@ -185,7 +185,7 @@ footer small {
   flex-wrap: wrap;
 }
 
-/* ===== Mode Sombre ===== */
+/* ===== Dark Mode===== */
 .dark-mode {
   --bg: #1e1e1e;
   --paper: #2c2c2c;
@@ -202,10 +202,10 @@ footer small {
   color: #ddd;
 }
 .dark-mode .logo-text {
-  color: #ffffff; /* Logo devient blanc */
+  color: #ffffff; /* Logo becomes white*/
 }
 .dark-mode .btn {
-  background: #4dabf7; /* Bouton clair */
+  background: #4dabf7; /* Bright button */
   border-color: #4dabf7;
   color: #ffffff;
 }
@@ -227,3 +227,103 @@ footer small {
     font-size: 1.7rem;
   }
 }
+
+/* === Fix navbar readability in dark mode === */
+.dark-mode header {
+  background: rgba(0, 0, 0, 0.65); /* Darker for contrast*/
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.dark-mode .menu a {
+  color: #f6f7fb; /*text clearer*/
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .menu a:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.dark-mode .menu a[aria-current="page"] {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.18); /*brighter to stand out*/
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.dark-mode .theme-btn {
+  color: #ffd166;
+}
+
+/* ===== Remplacement for the incline css ===== */
+
+.page-title {
+  margin: 10px 0 6px;
+}
+
+.mb-12 {
+  margin-bottom: 12px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mt-8 {
+  margin-top: 8px;
+}
+
+.mt-12 {
+  margin-top: 12px;
+}
+
+.mt-14 {
+  margin-top: 14px;
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.text-small {
+  font-size: 0.95rem;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.row-end {
+  align-items: flex-end;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.card-narrow {
+  max-width: 520px;
+  margin: 24px auto;
+}
+
+.card-medium {
+  max-width: 620px;
+  margin: 24px auto;
+}
+
+.hint {
+  list-style: none;
+  color: var(--muted);
+}
+
+/* ===== End of utilitaries ===== */

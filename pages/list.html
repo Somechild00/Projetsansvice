@@ -10,14 +10,12 @@
     <header>
       <div class="wrap nav">
         <a href="../index.html" class="logo-text">Grocerly</a>
-
         <ul class="menu">
           <li><a href="../index.html">Accueil</a></li>
           <li><a href="./list.html" aria-current="page">Ma liste</a></li>
           <li><a href="./login.html">Connexion</a></li>
           <li><a href="./profil.html">Profil</a></li>
         </ul>
-
         <button id="themeToggle" class="theme-btn" title="Changer de mode">
           🌙
         </button>
@@ -25,14 +23,13 @@
     </header>
 
     <main class="wrap">
-      <h1 style="margin: 10px 0 6px">Liste de courses</h1>
+      <h1 class="page-title">Liste de courses</h1>
 
       <section class="card">
         <h2 class="section-title">Ajouter un article</h2>
-        <!-- démo sans JS -->
-        <form class="row" style="gap: 12px; align-items: flex-end">
-          <label style="flex: 2"
-            >Nom de l’article
+        <form class="row row-end">
+          <label class="flex-2">
+            Nom de l’article
             <input
               class="input"
               type="text"
@@ -40,27 +37,23 @@
               required
             />
           </label>
-          <label style="flex: 1"
-            >Quantité
+          <label class="flex-1">
+            Quantité
             <input class="input" type="number" min="1" value="1" />
           </label>
-          <label style="flex: 1"
-            >Rayon
+          <label class="flex-1">
+            Rayon
             <input class="input" type="text" placeholder="ex : Crèmerie" />
           </label>
           <button class="btn" type="submit">Ajouter</button>
         </form>
-        <p style="color: var(--muted); margin-top: 8px">
-          Champs requis : nom (rayon facultatif).
-        </p>
+        <p class="text-muted mt-8">Champs requis : nom (rayon facultatif).</p>
       </section>
 
       <section class="card">
         <h2 class="section-title">Vos articles</h2>
         <ul class="list">
-          <li class="hint" style="list-style: none; color: var(--muted)">
-            Aucun article pour le moment (démo).
-          </li>
+          <li class="hint">Aucun article pour le moment (démo).</li>
         </ul>
       </section>
     </main>

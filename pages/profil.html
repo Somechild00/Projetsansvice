@@ -10,14 +10,12 @@
     <header>
       <div class="wrap nav">
         <a href="../index.html" class="logo-text">Grocerly</a>
-
         <ul class="menu">
           <li><a href="../index.html">Accueil</a></li>
           <li><a href="./list.html">Ma liste</a></li>
           <li><a href="./login.html">Connexion</a></li>
           <li><a href="./profil.html" aria-current="page">Profil</a></li>
         </ul>
-
         <button id="themeToggle" class="theme-btn" title="Changer de mode">
           🌙
         </button>
@@ -25,11 +23,11 @@
     </header>
 
     <main class="wrap">
-      <section class="card" style="max-width: 620px; margin: 24px auto">
-        <h1 style="margin-bottom: 10px">Mon profil</h1>
+      <section class="card card-medium">
+        <h1 class="mb-10">Mon profil</h1>
         <p><strong>Nom d’utilisateur :</strong> utilisateur_demo</p>
         <p><strong>Email :</strong> demo@grocerly.fr</p>
-        <p style="margin-top: 12px">
+        <p class="mt-12">
           <button class="btn">Se déconnecter</button>
         </p>
       </section>
@@ -52,8 +50,8 @@
       toggle.addEventListener("click", () => {
         body.classList.toggle("dark-mode");
         const dark = body.classList.contains("dark-mode");
-        toggle.textContent = dark ? "☀️" : "🌙";
         localStorage.setItem("theme", dark ? "dark" : "light");
+        toggle.textContent = dark ? "☀️" : "🌙";
       });
     </script>
   </body>

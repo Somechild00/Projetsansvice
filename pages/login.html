@@ -10,14 +10,12 @@
     <header>
       <div class="wrap nav">
         <a href="../index.html" class="logo-text">Grocerly</a>
-
         <ul class="menu">
           <li><a href="../index.html">Accueil</a></li>
           <li><a href="./list.html">Ma liste</a></li>
           <li><a href="./login.html" aria-current="page">Connexion</a></li>
           <li><a href="./profil.html">Profil</a></li>
         </ul>
-
         <button id="themeToggle" class="theme-btn" title="Changer de mode">
           🌙
         </button>
@@ -25,12 +23,12 @@
     </header>
 
     <main class="wrap">
-      <section class="card" style="max-width: 520px; margin: 24px auto">
-        <h1 style="margin-bottom: 12px">Se connecter</h1>
+      <section class="card card-narrow">
+        <h1 class="mb-12">Se connecter</h1>
 
-        <form class="row" style="flex-direction: column; gap: 12px">
-          <label
-            >E-mail
+        <form class="stack">
+          <label>
+            E-mail
             <input
               class="input"
               type="email"
@@ -38,8 +36,8 @@
               required
             />
           </label>
-          <label
-            >Mot de passe
+          <label>
+            Mot de passe
             <input
               class="input"
               type="password"
@@ -50,9 +48,9 @@
           <button class="btn" type="submit">Se connecter</button>
         </form>
 
-        <p style="margin-top: 14px; color: var(--muted); font-size: 0.95rem">
+        <p class="mt-14 text-muted text-small">
           Pas encore inscrit ?
-          <a href="#" style="text-decoration: underline">Créer mon compte</a>
+          <a href="#" class="underline">Créer mon compte</a>
         </p>
       </section>
     </main>
@@ -64,9 +62,7 @@
     </footer>
 
     <script>
-      // année
       document.getElementById("year").textContent = new Date().getFullYear();
-      // thème
       const toggle = document.getElementById("themeToggle");
       const body = document.body;
       if (localStorage.getItem("theme") === "dark") {
@@ -76,8 +72,8 @@
       toggle.addEventListener("click", () => {
         body.classList.toggle("dark-mode");
         const dark = body.classList.contains("dark-mode");
-        toggle.textContent = dark ? "☀️" : "🌙";
         localStorage.setItem("theme", dark ? "dark" : "light");
+        toggle.textContent = dark ? "☀️" : "🌙";
       });
     </script>
   </body>
