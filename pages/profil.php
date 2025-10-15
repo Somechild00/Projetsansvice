@@ -9,12 +9,12 @@
   <body>
     <header>
       <div class="wrap nav">
-        <a href="../index.html" class="logo-text">Grocerly</a>
+        <a href="../index.php" class="logo-text">Grocerly</a>
         <ul class="menu">
-          <li><a href="../index.html">Accueil</a></li>
-          <li><a href="./list.html">Ma liste</a></li>
-          <li><a href="./login.html">Connexion</a></li>
-          <li><a href="./profil.html" aria-current="page">Profil</a></li>
+          <li><a href="../index.php">Accueil</a></li>
+          <li><a href="./list.php">Ma liste</a></li>
+          <li><a href="./login.php">Connexion</a></li>
+          <li><a href="./profil.php" aria-current="page">Profil</a></li>
         </ul>
         <button id="themeToggle" class="theme-btn" title="Changer de mode">
           🌙
@@ -37,6 +37,6 @@
       </div>
     </footer>
 
-    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/index.js"></script>
   </body>
 </html>
