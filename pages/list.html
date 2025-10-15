@@ -28,8 +28,8 @@
       <section class="card">
         <h2 class="section-title">Ajouter un article</h2>
         <form class="row row-end">
-          <label class="flex-2">
-            Nom de l’article
+          <label class="flex-2"
+            >Nom de l’article
             <input
               class="input"
               type="text"
@@ -37,12 +37,12 @@
               required
             />
           </label>
-          <label class="flex-1">
-            Quantité
+          <label class="flex-1"
+            >Quantité
             <input class="input" type="number" min="1" value="1" />
           </label>
-          <label class="flex-1">
-            Rayon
+          <label class="flex-1"
+            >Rayon
             <input class="input" type="text" placeholder="ex : Crèmerie" />
           </label>
           <button class="btn" type="submit">Ajouter</button>
@@ -64,20 +64,6 @@
       </div>
     </footer>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-      const toggle = document.getElementById("themeToggle");
-      const body = document.body;
-      if (localStorage.getItem("theme") === "dark") {
-        body.classList.add("dark-mode");
-        toggle.textContent = "☀️";
-      }
-      toggle.addEventListener("click", () => {
-        body.classList.toggle("dark-mode");
-        const dark = body.classList.contains("dark-mode");
-        toggle.textContent = dark ? "☀️" : "🌙";
-        localStorage.setItem("theme", dark ? "dark" : "light");
-      });
-    </script>
+    <script src="../assets/js/script.js"></script>
   </body>
 </html>

@@ -6,35 +6,35 @@
     <title>Accueil – Grocerly</title>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-
   <body class="index-page">
     <header>
       <div class="wrap nav">
         <a href="index.html" class="logo-text">Grocerly</a>
-
         <ul class="menu">
           <li><a href="index.html" aria-current="page">Accueil</a></li>
           <li><a href="pages/list.html">Ma liste</a></li>
           <li><a href="pages/login.html">Connexion</a></li>
           <li><a href="pages/profil.html">Profil</a></li>
         </ul>
-
-        <!-- Bouton pour changer le thème -->
         <button id="themeToggle" class="theme-btn" title="Changer de mode">
           🌙
         </button>
-      </div>
+        <!-- Variante SVG (optionnelle) :
+      <button id="theme-toggle" class="theme-btn" aria-label="Basculer le thème" title="Basculer le thème">
+        <svg id="theme-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+      </button>
+      --></div>
     </header>
 
     <main class="hero">
       <div class="wrap">
         <h1>Des courses simples et rapides</h1>
         <p>Crée ta liste de courses et organise tes repas en quelques clics.</p>
-
         <div class="search">
           <input
-            type="text"
             class="input"
+            type="text"
             placeholder="Saisis un produit ou un rayon..."
           />
           <button class="btn" type="button">Rechercher</button>
@@ -48,26 +48,6 @@
       </div>
     </footer>
 
-    <script>
-      // Met à jour l’année automatiquement
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      // Gestion du mode sombre
-      const toggle = document.getElementById("themeToggle");
-      const body = document.body;
-
-      // Si un thème a déjà été choisi avant
-      if (localStorage.getItem("theme") === "dark") {
-        body.classList.add("dark-mode");
-        toggle.textContent = "☀️";
-      }
-
-      toggle.addEventListener("click", () => {
-        body.classList.toggle("dark-mode");
-        const darkMode = body.classList.contains("dark-mode");
-        toggle.textContent = darkMode ? "☀️" : "🌙";
-        localStorage.setItem("theme", darkMode ? "dark" : "light");
-      });
-    </script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>

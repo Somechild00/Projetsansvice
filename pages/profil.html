@@ -27,9 +27,7 @@
         <h1 class="mb-10">Mon profil</h1>
         <p><strong>Nom d’utilisateur :</strong> utilisateur_demo</p>
         <p><strong>Email :</strong> demo@grocerly.fr</p>
-        <p class="mt-12">
-          <button class="btn">Se déconnecter</button>
-        </p>
+        <p class="mt-12"><button class="btn">Se déconnecter</button></p>
       </section>
     </main>
 
@@ -39,20 +37,6 @@
       </div>
     </footer>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-      const toggle = document.getElementById("themeToggle");
-      const body = document.body;
-      if (localStorage.getItem("theme") === "dark") {
-        body.classList.add("dark-mode");
-        toggle.textContent = "☀️";
-      }
-      toggle.addEventListener("click", () => {
-        body.classList.toggle("dark-mode");
-        const dark = body.classList.contains("dark-mode");
-        localStorage.setItem("theme", dark ? "dark" : "light");
-        toggle.textContent = dark ? "☀️" : "🌙";
-      });
-    </script>
+    <script src="../assets/js/script.js"></script>
   </body>
 </html>
