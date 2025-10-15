@@ -1,60 +1,90 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Ma liste – Projetsansvice</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ma liste – Grocerly</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
   <body>
-    <header class="container">
-      <nav>
-        <a class="logo" href="../index.html">Grocerly</a>
-        <ul>
+    <header>
+      <div class="wrap nav">
+        <a href="../index.html" class="logo-text">Grocerly</a>
+
+        <ul class="menu">
+          <li><a href="../index.html">Accueil</a></li>
           <li><a href="./list.html" aria-current="page">Ma liste</a></li>
           <li><a href="./login.html">Connexion</a></li>
-          <li><a href="./profile.html">Profil</a></li>
+          <li><a href="./profil.html">Profil</a></li>
         </ul>
-      </nav>
+
+        <button id="themeToggle" class="theme-btn" title="Changer de mode">
+          🌙
+        </button>
+      </div>
     </header>
 
-    <main class="container">
-      <h1>Liste de courses</h1>
+    <main class="wrap">
+      <h1 style="margin: 10px 0 6px">Liste de courses</h1>
 
       <section class="card">
-        <h2>Ajouter un article</h2>
-        <form class="grid">
-          <label
+        <h2 class="section-title">Ajouter un article</h2>
+        <!-- démo sans JS -->
+        <form class="row" style="gap: 12px; align-items: flex-end">
+          <label style="flex: 2"
             >Nom de l’article
             <input
               class="input"
               type="text"
-              placeholder="ex : Pâtes"
+              placeholder="ex : Lait entier"
               required
             />
           </label>
-          <label
+          <label style="flex: 1"
             >Quantité
             <input class="input" type="number" min="1" value="1" />
           </label>
-          <label
+          <label style="flex: 1"
             >Rayon
-            <input class="input" type="text" placeholder="ex : Épicerie" />
+            <input class="input" type="text" placeholder="ex : Crèmerie" />
           </label>
           <button class="btn" type="submit">Ajouter</button>
         </form>
+        <p style="color: var(--muted); margin-top: 8px">
+          Champs requis : nom (rayon facultatif).
+        </p>
       </section>
 
       <section class="card">
-        <h2>Vos articles</h2>
+        <h2 class="section-title">Vos articles</h2>
         <ul class="list">
-          <li class="hint">Aucun article pour le moment.</li>
+          <li class="hint" style="list-style: none; color: var(--muted)">
+            Aucun article pour le moment (démo).
+          </li>
         </ul>
       </section>
     </main>
 
-    <footer class="container">
-      <small>© 2025 Projetsansvice</small>
+    <footer>
+      <div class="wrap">
+        <small>© <span id="year"></span> Grocerly – Projet étudiant</small>
+      </div>
     </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+      const toggle = document.getElementById("themeToggle");
+      const body = document.body;
+      if (localStorage.getItem("theme") === "dark") {
+        body.classList.add("dark-mode");
+        toggle.textContent = "☀️";
+      }
+      toggle.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+        const dark = body.classList.contains("dark-mode");
+        toggle.textContent = dark ? "☀️" : "🌙";
+        localStorage.setItem("theme", dark ? "dark" : "light");
+      });
+    </script>
   </body>
 </html>

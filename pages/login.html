@@ -1,50 +1,84 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Connexion – Projetsansvice</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connexion – Grocerly</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
   <body>
-    <header class="container">
-      <nav>
-        <a class="logo" href="../index.html">Grocerly</a>
-        <ul>
+    <header>
+      <div class="wrap nav">
+        <a href="../index.html" class="logo-text">Grocerly</a>
+
+        <ul class="menu">
+          <li><a href="../index.html">Accueil</a></li>
           <li><a href="./list.html">Ma liste</a></li>
           <li><a href="./login.html" aria-current="page">Connexion</a></li>
           <li><a href="./profil.html">Profil</a></li>
         </ul>
-      </nav>
+
+        <button id="themeToggle" class="theme-btn" title="Changer de mode">
+          🌙
+        </button>
+      </div>
     </header>
 
-    <main class="container">
-      <h1>Connexion</h1>
-      <form class="card grid">
-        <label
-          >E-mail
-          <input
-            class="input"
-            type="email"
-            placeholder="ex : nom@exemple.com"
-            required
-          />
-        </label>
-        <label
-          >Mot de passe
-          <input
-            class="input"
-            type="password"
-            placeholder="Votre mot de passe"
-            required
-          />
-        </label>
-        <button class="btn" type="submit">Se connecter</button>
-      </form>
+    <main class="wrap">
+      <section class="card" style="max-width: 520px; margin: 24px auto">
+        <h1 style="margin-bottom: 12px">Se connecter</h1>
+
+        <form class="row" style="flex-direction: column; gap: 12px">
+          <label
+            >E-mail
+            <input
+              class="input"
+              type="email"
+              placeholder="ex : nom@exemple.com"
+              required
+            />
+          </label>
+          <label
+            >Mot de passe
+            <input
+              class="input"
+              type="password"
+              placeholder="Votre mot de passe"
+              required
+            />
+          </label>
+          <button class="btn" type="submit">Se connecter</button>
+        </form>
+
+        <p style="margin-top: 14px; color: var(--muted); font-size: 0.95rem">
+          Pas encore inscrit ?
+          <a href="#" style="text-decoration: underline">Créer mon compte</a>
+        </p>
+      </section>
     </main>
 
-    <footer class="container">
-      <small>© 2025 Projetsansvice</small>
+    <footer>
+      <div class="wrap">
+        <small>© <span id="year"></span> Grocerly – Projet étudiant</small>
+      </div>
     </footer>
+
+    <script>
+      // année
+      document.getElementById("year").textContent = new Date().getFullYear();
+      // thème
+      const toggle = document.getElementById("themeToggle");
+      const body = document.body;
+      if (localStorage.getItem("theme") === "dark") {
+        body.classList.add("dark-mode");
+        toggle.textContent = "☀️";
+      }
+      toggle.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+        const dark = body.classList.contains("dark-mode");
+        toggle.textContent = dark ? "☀️" : "🌙";
+        localStorage.setItem("theme", dark ? "dark" : "light");
+      });
+    </script>
   </body>
 </html>

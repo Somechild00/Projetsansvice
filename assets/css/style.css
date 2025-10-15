@@ -1,0 +1,229 @@
+/* Grocerly – Fresh & Simple Student Version */
+
+/* ===== Fonts ===== */
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700&display=swap");
+
+/* ===== Variables ===== */
+:root {
+  --bg: #f5f5f5;
+  --paper: #ffffff;
+  --text: #1a1a1a;
+  --muted: #555;
+  --accent: #28a745;
+  --border: #ddd;
+}
+
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  font-family: "Poppins", system-ui, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* ===== Layout ===== */
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* ===== Header ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+}
+
+/* Logo texte */
+.logo-text {
+  font-family: "Pacifico", cursive;
+  font-size: 1.8rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: 0.3s;
+}
+.logo-text:hover {
+  opacity: 0.8;
+}
+
+.menu {
+  list-style: none;
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+}
+.menu a {
+  text-decoration: none;
+  color: var(--text);
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: 0.2s;
+}
+.menu a:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+.menu a[aria-current="page"] {
+  background: #e6ffe9;
+  border-color: var(--border);
+}
+
+/* ===== Bouton Mode Sombre ===== */
+.theme-btn {
+  margin-left: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.theme-btn:hover {
+  transform: scale(1.1);
+}
+
+/* ===== Buttons & Inputs ===== */
+.btn {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+.input,
+select,
+textarea {
+  width: 100%;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  margin: 14px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== Footer ===== */
+footer {
+  margin-top: 100px;
+  background: transparent;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+footer small {
+  display: block;
+  font-size: 0.9rem;
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+/* ===== Hero (index only) ===== */
+.index-page {
+  background: url("../images/background.jpg") no-repeat center top fixed;
+  background-size: cover;
+}
+.index-page .hero {
+  text-align: center;
+  padding: 100px 20px 80px;
+}
+.index-page .hero h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+.index-page .hero p {
+  color: #f0f0f0;
+  margin-bottom: 18px;
+}
+.index-page .search {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ===== Mode Sombre ===== */
+.dark-mode {
+  --bg: #1e1e1e;
+  --paper: #2c2c2c;
+  --text: #f1f1f1;
+  --muted: #aaa;
+  --accent: #4dabf7;
+  --border: #3d3d3d;
+}
+.dark-mode header {
+  background: rgba(30, 30, 30, 0.9);
+  border-bottom: 1px solid #333;
+}
+.dark-mode footer small {
+  color: #ddd;
+}
+.dark-mode .logo-text {
+  color: #ffffff; /* Logo devient blanc */
+}
+.dark-mode .btn {
+  background: #4dabf7; /* Bouton clair */
+  border-color: #4dabf7;
+  color: #ffffff;
+}
+.dark-mode .btn:hover {
+  opacity: 0.85;
+}
+.dark-mode .card {
+  background: var(--paper);
+  color: var(--text);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+  .menu a {
+    padding: 6px 10px;
+  }
+  .index-page .hero h1 {
+    font-size: 1.7rem;
+  }
+}

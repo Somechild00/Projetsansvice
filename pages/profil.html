@@ -1,34 +1,60 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Profil – Projetsansvice</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil – Grocerly</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
   <body>
-    <header class="container">
-      <nav>
-        <a class="logo" href="../index.html">Grocerly</a>
-        <ul>
+    <header>
+      <div class="wrap nav">
+        <a href="../index.html" class="logo-text">Grocerly</a>
+
+        <ul class="menu">
+          <li><a href="../index.html">Accueil</a></li>
           <li><a href="./list.html">Ma liste</a></li>
           <li><a href="./login.html">Connexion</a></li>
-          <li><a href="./profile.html" aria-current="page">Profil</a></li>
+          <li><a href="./profil.html" aria-current="page">Profil</a></li>
         </ul>
-      </nav>
+
+        <button id="themeToggle" class="theme-btn" title="Changer de mode">
+          🌙
+        </button>
+      </div>
     </header>
 
-    <main class="container">
-      <h1>Mon profil</h1>
-      <section class="card">
+    <main class="wrap">
+      <section class="card" style="max-width: 620px; margin: 24px auto">
+        <h1 style="margin-bottom: 10px">Mon profil</h1>
         <p><strong>Nom d’utilisateur :</strong> utilisateur_demo</p>
-        <p><strong>Email :</strong> demo@projetsansvice.fr</p>
-        <button class="btn">Se déconnecter</button>
+        <p><strong>Email :</strong> demo@grocerly.fr</p>
+        <p style="margin-top: 12px">
+          <button class="btn">Se déconnecter</button>
+        </p>
       </section>
     </main>
 
-    <footer class="container">
-      <small>© 2025 Projetsansvice</small>
+    <footer>
+      <div class="wrap">
+        <small>© <span id="year"></span> Grocerly – Projet étudiant</small>
+      </div>
     </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+      const toggle = document.getElementById("themeToggle");
+      const body = document.body;
+      if (localStorage.getItem("theme") === "dark") {
+        body.classList.add("dark-mode");
+        toggle.textContent = "☀️";
+      }
+      toggle.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+        const dark = body.classList.contains("dark-mode");
+        toggle.textContent = dark ? "☀️" : "🌙";
+        localStorage.setItem("theme", dark ? "dark" : "light");
+      });
+    </script>
   </body>
 </html>
